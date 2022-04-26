@@ -468,7 +468,7 @@ public class TutorialPresenter<StepViewType: TutorialStepView>: TutorialPresenti
             arrow = UIImageView(image: UIImage(named: textPos == .left
                                                 ? "arrow.right.down"
                                                 : "arrow.left.down",
-                                               in: Bundle.module,
+                                               in: Bundle(for: TutorialPresenter.self),
                                                compatibleWith: nil))
             origin = CGPoint(x: anchorRect.midX - arrow.bounds.width / 2.0
                                 + (textPos == .left ? -8.0 : 8.0)
@@ -478,7 +478,7 @@ public class TutorialPresenter<StepViewType: TutorialStepView>: TutorialPresenti
             arrow = UIImageView(image: UIImage(named: textPos == .left
                                                 ? "arrow.right.up"
                                                 : "arrow.left.up",
-                                               in: Bundle.module,
+                                               in: Bundle(for: TutorialPresenter.self),
                                                compatibleWith: nil))
             origin = CGPoint(x: anchorRect.midX - arrow.bounds.width / 2.0
                                 + (textPos == .left ? -8.0 : 8.0)
@@ -488,7 +488,7 @@ public class TutorialPresenter<StepViewType: TutorialStepView>: TutorialPresenti
             arrow = UIImageView(image: UIImage(named: textPos == .up
                                                 ? "arrow.down.right"
                                                 : "arrow.up.right",
-                                               in: Bundle.module,
+                                               in: Bundle(for: TutorialPresenter.self),
                                                compatibleWith: nil))
             origin = CGPoint(x: targetRect.minX - arrow.bounds.width - 8.0,
                              y: anchorRect.midY - arrow.bounds.height / 2.0
@@ -498,7 +498,7 @@ public class TutorialPresenter<StepViewType: TutorialStepView>: TutorialPresenti
             arrow = UIImageView(image: UIImage(named: textPos == .up
                                                 ? "arrow.down.left"
                                                 : "arrow.up.left",
-                                               in: Bundle.module,
+                                               in: Bundle(for: TutorialPresenter.self),
                                                compatibleWith: nil))
             origin = CGPoint(x: targetRect.maxX + 8.0,
                              y: anchorRect.midY - arrow.bounds.height / 2.0
