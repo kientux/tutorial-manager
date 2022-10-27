@@ -13,18 +13,20 @@ public protocol TutorialSavingStorage {
 }
 
 public struct TutorialUserDefaultsStorage {
-    private let userDefaults: UserDefaults
-    private let showedPrefix: String = "app.tutorial.module.showed."
     
+    public static var showedPrefix: String = "app.tutorial.module.showed."
+    public static var disableKey: String = "app.tutorial.is_tutorial_disabled"
+
+    private let userDefaults: UserDefaults
     private let isDisabled: Bool
     
     public init(userDefaults: UserDefaults = .standard) {
         self.userDefaults = userDefaults
-        self.isDisabled = userDefaults.bool(forKey: "app.tutorial.is_tutorial_disabled")
+        self.isDisabled = userDefaults.bool(forKey: TutorialUserDefaultsStorage.disableKey)
     }
     
     private func keyForName(_ name: String) -> String {
-        showedPrefix + name
+        TutorialUserDefaultsStorage.showedPrefix + name
     }
     
     public func reset(module: String) {
