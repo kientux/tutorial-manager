@@ -40,4 +40,9 @@ extension UIBarButtonItem: TutorialStepTargeting {
 public struct TutorialStepTarget: TutorialStepTargeting {
     public var targetView: UIView
     public var arrowAnchorView: UIView?
+
+    public init(targetView: UIView, arrowAnchorView: UIView? = nil) {
+        self.targetView = targetView
+        self.arrowAnchorView = arrowAnchorView
+    }
 }
